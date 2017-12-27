@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>注册页面</title>
+		<link rel="stylesheet" type="text/css" href="../css/m_reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+		<script src="../js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="login_header">
+			<div class="container">
+				<a href="javascript:;"><img src="../img/login_logo.png"/> </a>
+			</div>
+		</div>
+		<div class="container login_info">
+			<form action="../regSave" method="post">
+				<h2>立即注册</h2>
+				<div class="sign-contact">
+					<div class="red-line">&nbsp;</div>
+					<div class="reg_main claerfloat">
+						<h5>现在就开始创建一个华为账号吧，填写以下信息即可。</h5>
+						<div class="field">
+							<span>邮箱</span><input type="text" name="email" id="email"/>
+							<div class="emailErrMsg" style="margin-left: 170px;margin-top:4px;color: red;"></div>
+						</div>
+						<div class="field">
+							<span>密码</span><input type="password" name="password" id="password"/>
+							<div class="passwordErrMsg" style="margin-left: 170px;margin-top:4px;color: red;"></div>
+						</div>
+						<div class="field">
+							<span>姓</span><input type="text" name="surname" id="surname"/>
+							<div class="surnameErrMsg" style="margin-left: 170px;margin-top:4px;color: red;"></div>
+						</div>
+						<div class="field">
+							<span>名</span><input type="text" name="name" id="name"/>
+							<div class="nameErrMsg" style="margin-left: 170px;margin-top:4px;color: red;"></div>
+						</div>
+						<div class="line"></div>
+						<div class="chechbox">
+							<span><input type="checkbox" name="" id="" value="" /></span>
+							<span>我愿意接收华为为我推介的相关信息</span>
+						</div>
+						<div class="chechbox">
+							<span><input type="checkbox" name="" id="" value="" /></span>
+							<span>我愿意接收华为信任的第三方合作伙伴为我推介的华为相关信息</span>
+						</div>
+						<div class="clear"></div>
+						<p>* 提交此表格表明你同意接受华为的隐私保护条款和使用条款.</p>
+						<div class="field yzm">
+							<span>验证码</span><input type="text" name="yzm" />
+							<i id="v_container" style="width: 180px;height: 40px;display: block;float: right;"></i>
+						</div>
+						<div class="sub">
+							<span></span>
+							<input type="submit" value="注册" />
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script src="../js/gVerify.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var verifyCode = new GVerify("v_container");
+        	$("#email").click(function(){
+        		$(this).css("border-color","#af2d2d")
+        	}).blur(function(){
+        		$(this).css("border-color","#b9babe")
+        		if($(this).val()==""){
+        			$(".emailErrMsg").html("*用户名不能为空")
+        		}else{
+        			$(".emailErrMsg").remove()
+        		}
+        		
+        	})
+        	$("#password").click(function(){
+        		$(this).css("border-color","#af2d2d")
+        	}).blur(function(){
+        		$(this).css("border-color","#b9babe")
+        		if($(this).val()==""){
+        			$(".passwordErrMsg").html("*密码不能为空")
+        		}else{
+        			$(".passwordErrMsg").remove()
+        		}
+        	})
+        	$("#surname").click(function(){
+        		$(this).css("border-color","#af2d2d")
+        	}).blur(function(){
+        		$(this).css("border-color","#b9babe")
+        		if($(this).val()==""){
+        			$(".surnameErrMsg").html("*姓不能为空")
+        		}else{
+        			$(".surnameErrMsg").remove()
+        		}
+        	})
+        	$("#name").click(function(){
+        		$(this).css("border-color","#af2d2d")
+        	}).blur(function(){
+        		$(this).css("border-color","#b9babe")
+        		if($(this).val()==""){
+        			$(".nameErrMsg").html("*名不能为空")
+        		}else{
+        			$(".nameErrMsg").remove()
+        		}
+        	})
+        </script>
+	</body>
+</html>

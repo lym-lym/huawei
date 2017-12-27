@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>登录页</title>
+		<link rel="stylesheet" type="text/css" href="../css/m_reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+		<script src="../js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="login_header">
+			<div class="container">
+				<a href="javascript:;"><img src="../img/login_logo.png"/> </a>
+			</div>
+		</div>
+		<div class="container login_info">
+			<form action="/login" method="post">
+				<h2>登录</h2>
+				<div class="sign-contact">
+					<div class="red-line">&nbsp;</div>
+					<div class="main">
+						<div class="username">
+							<input type="text" placeholder="邮箱/账号" name="email" id="username" />
+							<span></span>
+							<div class="usernameErrMsg"></div>
+						</div>
+						<div class="userpass">
+							<input type="password" placeholder="密码" name="userpass" id="userpass" />
+							<span></span>
+							<div class="userpassErrMsg"></div>
+						</div>
+						<input type="submit" name="submit"  value="登录" />
+						<div class="a">
+							<a href="javascript:;">帮助</a>
+							<a href="javascript:;" style="float: right;">立即注册</a>
+							<a href="javascript:;" style="float: right; margin-right: 20px;">忘记密码</a>
+						</div>
+						<div class="other_way">
+                            <p>也可以用以下账号登录：</p>
+                            <a class="linkedinLogin" href="javascript:void();"></a>
+                        </div>
+					</div>
+				</div>
+			</form>
+		</div>
+		 <script type="text/javascript">
+        	$("#username").click(function(){
+        		$(this).css("border-color","#af2d2d")
+        		$(this).siblings("span").css("background-position","-210px,0")
+        	}).blur(function(){
+        		$(this).siblings("span").css("background-position","0,0")
+        		$(this).css("border-color","#b9babe")
+        		if($(this).val()==""){
+        			$(".usernameErrMsg").html("*用户名不能为空")
+        		}else{
+        			$(".usernameErrMsg").remove()
+        		}
+        		
+        	})
+        	$("#userpass").click(function(){
+        		$(this).css("border-color","#af2d2d")
+        		$(this).siblings("span").css("background-position","-98px,0")
+        	}).blur(function(){
+        		$(this).siblings("span").css("background-position","-48px,0")
+        		$(this).css("border-color","#b9babe")
+        		if($(this).val()==""){
+        			$(".userpassErrMsg").html("*密码不能为空")
+        		}else{
+        			$(".userpassErrMsg").remove()
+        		}
+        	})
+        </script>
+	</body>
+</html>
